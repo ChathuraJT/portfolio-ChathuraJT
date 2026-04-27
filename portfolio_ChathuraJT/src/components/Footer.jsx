@@ -17,13 +17,13 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-gray-900 border-t border-gray-800">
+    <footer className="bg-gray-900 border-t border-gray-800 transition-colors duration-300">
       {/* Main Footer Content */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-3 gap-12 mb-8">
           {/* Left Column - Brand */}
           <div>
-            <h3 className="text-xl font-bold text-indigo-400 mb-2">
+            <h3 className="text-xl font-bold text-emerald-400 mb-2">
               Chathura JT
             </h3>
             <p className="text-gray-400 text-sm leading-relaxed">
@@ -44,7 +44,7 @@ export default function Footer() {
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleLinkClick(e, link.href)}
-                  className="block text-gray-400 hover:text-indigo-400 transition text-sm"
+                  className="block text-gray-400 hover:text-emerald-400 transition text-sm"
                 >
                   {link.name}
                 </a>
@@ -60,7 +60,7 @@ export default function Footer() {
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-gray-400 hover:text-indigo-400 transition text-sm"
+                className="flex items-center gap-3 text-gray-400 hover:text-emerald-400 transition text-sm"
               >
                 {/* TODO: Replace with your GitHub URL */}
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -73,7 +73,7 @@ export default function Footer() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-gray-400 hover:text-indigo-400 transition text-sm"
+                className="flex items-center gap-3 text-gray-400 hover:text-emerald-400 transition text-sm"
               >
                 {/* TODO: Replace with your LinkedIn URL */}
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -86,7 +86,7 @@ export default function Footer() {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-gray-400 hover:text-indigo-400 transition text-sm"
+                className="flex items-center gap-3 text-gray-400 hover:text-emerald-400 transition text-sm"
               >
                 {/* TODO: Replace with your Twitter URL */}
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -99,7 +99,7 @@ export default function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-gray-400 hover:text-indigo-400 transition text-sm"
+                className="flex items-center gap-3 text-gray-400 hover:text-emerald-400 transition text-sm"
               >
                 {/* TODO: Replace with your Instagram URL */}
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -132,7 +132,7 @@ export default function Footer() {
             {/* Scroll to Top Button */}
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="text-gray-400 hover:text-indigo-400 transition text-sm font-medium"
+              className="text-gray-400 hover:text-emerald-400 transition text-sm font-medium"
             >
               Back to Top ↑
             </button>
