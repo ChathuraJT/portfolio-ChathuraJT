@@ -13,7 +13,7 @@ export default function About() {
     I specialize in modern JavaScript frameworks and have a keen eye for UI/UX design.`;
 
   return (
-    <section id="about" className="relative py-24 transition-colors duration-300 about-background">
+    <section id="about" className="relative flex-col py-24 transition-colors duration-300 about-background">
       {/* Background Overlay */}
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-white via-white/60 to-transparent dark:from-black dark:via-black/70 dark:to-transparent"></div>
 
@@ -27,9 +27,9 @@ export default function About() {
             <div className="w-16 h-1 bg-gradient-to-r from-emerald-600 to-teal-600"></div>
           </div>
 
-          <div className="grid gap-12 lg:grid-cols-2">
+          <div className="flex flex-col gap-12">
             {/* Bio Text */}
-            <div>
+            <div className="max-w-2xl">
               <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                 {bio}
               </p>
@@ -40,8 +40,8 @@ export default function About() {
               <h3 className="mb-6 text-2xl font-bold text-gray-900 dark:text-white">
                 <span className="text-emerald-600 dark:text-emerald-400">Tech</span> Stack
               </h3>
-              
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 max-w-3xl">
                 {skills.map((skill) => (
                   <div
                     key={skill}
@@ -64,14 +64,14 @@ export default function About() {
               </div>
               <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Projects Completed</p>
             </div>
-            
+
             <div className="text-left">
               <div className="mb-1 text-4xl font-bold text-emerald-600 dark:text-emerald-400">
                 2+
               </div>
               <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Years Experience</p>
             </div>
-            
+
             <div className="text-left">
               <div className="mb-1 text-4xl font-bold text-emerald-600 dark:text-emerald-400">
                 100%
