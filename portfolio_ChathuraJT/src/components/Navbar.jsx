@@ -71,7 +71,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="#" className="text-xl font-bold text-emerald-600 dark:text-emerald-400 hover:text-emerald-500 dark:hover:text-emerald-300 transition">
+            <a href="#" className="text-xl font-bold text-green-600 dark:text-green-400 hover:text-gray-700 dark:hover:text-green-300 transition">
               Chathura JT
             </a>
           </div>
@@ -85,8 +85,8 @@ export default function Navbar() {
                 onClick={(e) => handleLinkClick(e, link.href)}
                 className={`text-sm font-medium transition ${
                   activeSection === link.href.slice(1)
-                    ? 'text-emerald-600 dark:text-emerald-400 border-b-2 border-emerald-600 dark:border-emerald-400'
-                    : 'text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400'
+                    ? 'text-green-600 dark:text-green-400 border-b-2 border-gray-800 dark:border-gray-300'
+                    : 'text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-300'
                 }`}
               >
                 {link.name}
@@ -94,7 +94,7 @@ export default function Navbar() {
             ))}
             <button
               onClick={() => setIsDark(!isDark)}
-              className="p-2 text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+              className="p-2 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-300 transition rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
             >
               {isDark ? (
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
@@ -108,7 +108,7 @@ export default function Navbar() {
           <div className="md:hidden flex items-center gap-4">
             <button
               onClick={() => setIsDark(!isDark)}
-              className="text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition"
+              className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-300 transition"
             >
               {isDark ? (
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
@@ -118,7 +118,7 @@ export default function Navbar() {
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition"
+              className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-300 transition"
             >
               {isOpen ? (
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -143,8 +143,8 @@ export default function Navbar() {
                 onClick={(e) => handleLinkClick(e, link.href)}
                 className={`block px-3 py-2 text-sm font-medium transition ${
                   activeSection === link.href.slice(1)
-                    ? 'text-emerald-600 dark:text-emerald-400 bg-gray-100 dark:bg-gray-900'
-                    : 'text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400'
+                    ? 'text-green-600 dark:text-green-400 bg-gray-100 dark:bg-gray-900'
+                    : 'text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-300'
                 }`}
               >
                 {link.name}

@@ -19,7 +19,7 @@ export default function Hero() {
         {/* Left side - Text content */}
         <div className="space-y-6 text-left animate-fade-in">
           <h1 className="text-5xl font-bold leading-tight text-gray-900 dark:text-white md:text-6xl">
-            Hi, I'm <span className="text-emerald-600 dark:text-emerald-400">Chathura Janaka</span>
+            Hi, I'm <span className="text-green-600 dark:text-green-400">Chathura Janaka</span>
           </h1>
           
           <p className="text-2xl font-light text-gray-600 dark:text-gray-300 md:text-3xl">
@@ -35,7 +35,7 @@ export default function Hero() {
           <div className="flex flex-col gap-4 pt-4 sm:flex-row">
             <button
               onClick={handleDownloadCV}
-              className="inline-flex items-center justify-center gap-2 px-8 py-3 font-semibold text-white transition transform bg-emerald-600 rounded-lg hover:bg-emerald-700 hover:scale-105"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3 font-semibold text-white transition transform bg-gray-800 rounded-lg hover:bg-gray-900 hover:scale-105"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -45,7 +45,7 @@ export default function Hero() {
             
             <button
               onClick={handleContactMe}
-              className="inline-flex items-center justify-center gap-2 px-8 py-3 font-semibold text-emerald-600 dark:text-emerald-400 transition bg-white dark:bg-gray-800 border rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 border-emerald-200 dark:border-emerald-600/50 hover:border-emerald-400 dark:hover:border-emerald-400"
+              className="inline-flex items-center justify-center gap-2 px-8 py-3 font-semibold text-green-600 dark:text-green-400 transition bg-white dark:bg-gray-800 border rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 border-green-200 dark:border-green-600/50 hover:border-gray-300 dark:hover:border-gray-300"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -57,7 +57,7 @@ export default function Hero() {
 
         {/* Right side - Profile Image */}
         <div className="flex items-center justify-center">
-          <div className="w-64 h-64 p-1 rounded-full shadow-2xl md:w-80 md:h-80 bg-gradient-to-br from-emerald-500 to-teal-500 dark:from-emerald-600 dark:to-teal-600 hover:shadow-emerald-500/50">
+          <div className="w-64 h-64 p-1 rounded-full shadow-2xl md:w-80 md:h-80 bg-gradient-to-br from-gray-700 to-gray-600 dark:from-gray-800 dark:to-gray-700 hover:shadow-gray-700/50">
             <div className="flex items-center justify-center w-full h-full overflow-hidden bg-white dark:bg-gray-900 rounded-full profile-picture-container">
               <img
                 src="/fbpic.jpeg"
@@ -79,7 +79,7 @@ export default function Hero() {
 
       {/* Scroll indicator */}
       <div className="absolute transform -translate-x-1/2 bottom-8 left-1/2 animate-bounce">
-        <svg className="w-6 h-6 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
         </svg>
       </div>

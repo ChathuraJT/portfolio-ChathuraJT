@@ -12,13 +12,11 @@ export const education = [
     institution: "Rahula Collage, Matara",
     degree: "Advance level in Engineering Technology",
     year: "2017-2019",
-    description: "Completed advanced coursework in engineering technology with a focus on practical applications.",
   },
   {
     id: 3,
     institution: "Kokawela Central Collage, Matara",
     degree: "Ordinary level",
     year: "2006-2016",
-    description: "Completed coursework in various subjects with a focus on foundational knowledge and skills.",
   },
 ];

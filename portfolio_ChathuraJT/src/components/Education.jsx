@@ -2,88 +2,55 @@ import { education } from '../data/education';
 
 export default function Education() {
   return (
-    <section id="education" className="py-24 bg-gray-50 dark:bg-gray-950 transition-colors duration-300">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="education" className="py-16 transition-colors duration-300 bg-gray-50 dark:bg-gray-950">
+      <div className="max-w-4xl px-4 mx-auto sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            <span className="text-emerald-600 dark:text-emerald-400">Education</span> & Certifications
+        <div className="mb-10 text-center">
+          <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl dark:text-white">
+            <span className="text-green-600 dark:text-green-400">Education</span>
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-emerald-600 to-teal-600 mx-auto"></div>
+          <div className="w-16 h-1 mx-auto bg-gradient-to-r from-gray-800 to-gray-700"></div>
         </div>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-emerald-600 to-teal-600 hidden md:block"></div>
-
-          {/* Education Items */}
-          <div className="space-y-12">
-            {education.map((edu, index) => (
-              <div key={edu.id} className="relative">
-                <div className={`md:flex gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                  {/* Timeline dot */}
-                  <div className="flex md:w-1/2 md:justify-end">
-                    <div className="hidden md:flex items-center justify-center absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-white dark:bg-gray-950 border-4 border-emerald-600 rounded-full transition-colors duration-300">
-                      <svg className="w-6 h-6 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                      </svg>
-                    </div>
-
-                    {/* Mobile dot */}
-                    <div className="md:hidden flex items-center gap-4 mb-4">
-                      <div className="w-4 h-4 bg-emerald-600 rounded-full mt-2"></div>
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="md:w-1/2 ml-8 md:ml-0">
-                    <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 hover:border-emerald-400 dark:hover:border-emerald-600/50 shadow-sm dark:shadow-none rounded-lg p-6 transition">
-                      <div className="flex items-start gap-3 mb-3">
-                        <svg className="w-5 h-5 text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C6.5 6.253 2 10.998 2 17s4.5 10.747 10 10.747c5.5 0 10-4.998 10-10.747S17.5 6.253 12 6.253z" />
-                        </svg>
-                        <div>
-                          <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-                            {edu.degree}
-                          </h3>
-                          <p className="text-emerald-600 dark:text-emerald-400 font-semibold text-sm">
-                            {edu.institution}
-                          </p>
-                        </div>
-                      </div>
-
-                      <p className="text-gray-500 dark:text-gray-400 text-sm mb-3 font-medium">
-                        {edu.year}
-                      </p>
-
-                      <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                        {edu.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
+        {/* Timeline Container */}
+        <div className="relative mt-8 ml-4 space-y-8 border-l-2 border-gray-300 dark:border-gray-700 md:ml-6">
+          
+          {education.map((edu, index) => (
+            <div key={edu.id} className="relative pl-10 md:pl-16">
+              
+              {/* Timeline Node (Icon/Logo) */}
+              <div className="absolute -left-[20px] md:-left-[24px] top-6 w-10 h-10 md:w-12 md:h-12 bg-gray-100 dark:bg-gray-800 border-4 border-white dark:border-gray-950 rounded-full flex items-center justify-center overflow-hidden shadow-sm shadow-gray-400 dark:shadow-gray-900">
+                {edu.logo ? (
+                  <img src={edu.logo} alt={edu.institution} className="object-cover w-full h-full p-1 bg-white dark:bg-gray-900" />
+                ) : (
+                  <svg className="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 14l9-5-9-5-9 5 9 5z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                  </svg>
+                )}
               </div>
-            ))}
-          </div>
+
+              {/* Content Card */}
+              <div className="p-5 transition-shadow bg-white border border-gray-200 shadow-sm dark:bg-gray-900 dark:border-gray-800 rounded-xl md:p-6 hover:shadow-md">
+                <h3 className="mb-1 text-lg font-bold text-gray-900 md:text-xl dark:text-white">
+                  {edu.degree}
+                </h3>
+                <p className="mb-1 text-base text-gray-800 dark:text-gray-200">
+                  {edu.institution}
+                </p>
+                <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
+                  {edu.year}
+                </p>
+                <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+                  {edu.description}
+                </p>
+              </div>
+
+            </div>
+          ))}
+          
         </div>
 
-        {/* CTA */}
-        <div className="text-center mt-16 pt-12 border-t border-gray-200 dark:border-gray-800">
-          <p className="text-gray-500 dark:text-gray-400 mb-4">
-            Want to know more about my background?
-          </p>
-          <a
-            href="#contact"
-            onClick={(e) => {
-              e.preventDefault();
-              document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-            }}
-            className="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2 px-6 rounded-lg transition"
-          >
-            Get in Touch
-          </a>
-        </div>
       </div>
     </section>
   );
