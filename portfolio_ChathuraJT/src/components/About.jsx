@@ -19,7 +19,6 @@ That obsession is what drives everything I build.`;
             <div className="w-16 h-1 bg-gradient-to-r from-gray-800 to-gray-700"></div>
           </div>
 
-<<<<<<< HEAD
           <div className="grid gap-12 lg:grid-cols-1">
             {/* Bio Text */}
             <div>
@@ -27,35 +26,6 @@ That obsession is what drives everything I build.`;
                 {bio}
               </p>
             </div>
-=======
-          <div className="flex flex-col gap-12">
-            {/* Bio Text */}
-            <div className="max-w-2xl">
-              <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-                {bio}
-              </p>
-            </div>
-
-            {/* Skills Grid */}
-            <div>
-              <h3 className="mb-6 text-2xl font-bold text-gray-900 dark:text-white">
-                <span className="text-emerald-600 dark:text-emerald-400">Tech</span> Stack
-              </h3>
-
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 max-w-3xl">
-                {skills.map((skill) => (
-                  <div
-                    key={skill}
-                    className="px-4 py-2 text-center transition border border-gray-200 rounded-lg cursor-default bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm hover:bg-emerald-50 dark:hover:bg-emerald-600/20 hover:border-emerald-400 dark:hover:border-emerald-400 dark:border-gray-700 group"
-                  >
-                    <p className="text-sm font-semibold text-gray-700 transition dark:text-gray-300 group-hover:text-emerald-600 dark:group-hover:text-emerald-400">
-                      {skill}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
->>>>>>> 245782abdd1587adf5e86629f7ac0ed6e93f6393
           </div>
 
           {/* Additional Info */}
