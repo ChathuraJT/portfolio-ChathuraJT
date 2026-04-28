@@ -3,86 +3,81 @@ export default function About() {
     // Frontend
     'React', 'JavaScript', 'TypeScript', 'TailwindCSS', 'HTML/CSS',
     // Backend
-    'Node.js', 'Express', 'Python', 'MongoDB', 'PostgreSQL',
+    'Node.js', 'Express', 'Python', 'MongoDB',
     // Tools
-    'Git', 'Docker', 'VS Code', 'Figma', 'REST API',
+    'Git', 'VS Code', 'Figma', 'REST API',
   ];
 
-  // TODO: Replace with your actual bio
-  const bio = `I'm a passionate full-stack developer with 2+ years of experience building web applications. 
-    I specialize in modern JavaScript frameworks and have a keen eye for UI/UX design. 
-    When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, 
-    or sharing knowledge with the developer community.`;
+  // Bio
+  const bio = `I'm a Undergraduate of Sri Lanka Institute of Information Technology, passionate full-stack developer with 2+ years of experience building web applications. 
+    I specialize in modern JavaScript frameworks and have a keen eye for UI/UX design.`;
 
   return (
-    <section id="about" className="py-24 bg-gray-900">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            About <span className="text-indigo-400">Me</span>
-          </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-indigo-600 to-cyan-600 mx-auto"></div>
-        </div>
+    <section id="about" className="relative py-24 transition-colors duration-300 about-background">
+      {/* Background Overlay */}
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-white via-white/60 to-transparent dark:from-black dark:via-black/70 dark:to-transparent"></div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Bio Text */}
-          <div>
-            <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              {bio}
-            </p>
+      <div className="relative z-10 max-w-6xl px-4 mx-auto sm:px-6 lg:px-8">
+        <div className="max-w-4xl">
+          {/* Section Header */}
+          <div className="mb-12 text-left">
+            <h2 className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl dark:text-white">
+              About <span className="text-emerald-600 dark:text-emerald-400">Me</span>
+            </h2>
+            <div className="w-16 h-1 bg-gradient-to-r from-emerald-600 to-teal-600"></div>
+          </div>
+
+          <div className="grid gap-12 lg:grid-cols-2">
+            {/* Bio Text */}
+            <div>
+              <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+                {bio}
+              </p>
+            </div>
+
+            {/* Skills Grid */}
+            <div>
+              <h3 className="mb-6 text-2xl font-bold text-gray-900 dark:text-white">
+                <span className="text-emerald-600 dark:text-emerald-400">Tech</span> Stack
+              </h3>
+              
+              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                {skills.map((skill) => (
+                  <div
+                    key={skill}
+                    className="px-4 py-2 text-center transition border border-gray-200 rounded-lg cursor-default bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm hover:bg-emerald-50 dark:hover:bg-emerald-600/20 hover:border-emerald-400 dark:hover:border-emerald-400 dark:border-gray-700 group"
+                  >
+                    <p className="text-sm font-semibold text-gray-700 transition dark:text-gray-300 group-hover:text-emerald-600 dark:group-hover:text-emerald-400">
+                      {skill}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Additional Info */}
+          <div className="grid gap-8 pt-12 mt-16 border-t border-gray-200 md:grid-cols-3 dark:border-gray-800">
+            <div className="text-left">
+              <div className="mb-1 text-4xl font-bold text-emerald-600 dark:text-emerald-400">
+                15+
+              </div>
+              <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Projects Completed</p>
+            </div>
             
-            <p className="text-gray-400 mb-6">
-              I love turning complex problems into simple, beautiful, and intuitive designs. 
-              My focus is always on creating products that are engaging and accessible to users.
-            </p>
-          </div>
-
-          {/* Skills Grid */}
-          <div>
-            <h3 className="text-2xl font-bold text-white mb-8">
-              <span className="text-indigo-400">Tech</span> Stack
-            </h3>
+            <div className="text-left">
+              <div className="mb-1 text-4xl font-bold text-emerald-600 dark:text-emerald-400">
+                2+
+              </div>
+              <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Years Experience</p>
+            </div>
             
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-              {skills.map((skill) => (
-                <div
-                  key={skill}
-                  className="bg-gray-800 hover:bg-indigo-600/20 hover:border-indigo-400 border border-gray-700 rounded-lg py-3 px-4 text-center transition group cursor-default"
-                >
-                  <p className="text-gray-300 font-semibold group-hover:text-indigo-400 transition">
-                    {skill}
-                  </p>
-                </div>
-              ))}
+            <div className="text-left">
+              <div className="mb-1 text-4xl font-bold text-emerald-600 dark:text-emerald-400">
+                100%
+              </div>
+              <p className="text-sm font-medium text-gray-600 dark:text-gray-400">Client Satisfaction</p>
             </div>
-          </div>
-        </div>
-
-        {/* Additional Info */}
-        <div className="grid md:grid-cols-3 gap-8 mt-16 pt-16 border-t border-gray-800">
-          <div className="text-center">
-            <div className="text-4xl font-bold text-indigo-400 mb-2">
-              {/* TODO: Replace with your project count */}
-              15+
-            </div>
-            <p className="text-gray-400">Projects Completed</p>
-          </div>
-          
-          <div className="text-center">
-            <div className="text-4xl font-bold text-indigo-400 mb-2">
-              {/* TODO: Replace with your experience */}
-              2+
-            </div>
-            <p className="text-gray-400">Years Experience</p>
-          </div>
-          
-          <div className="text-center">
-            <div className="text-4xl font-bold text-indigo-400 mb-2">
-              {/* TODO: Replace with your achievement */}
-              100%
-            </div>
-            <p className="text-gray-400">Client Satisfaction</p>
           </div>
         </div>
       </div>
