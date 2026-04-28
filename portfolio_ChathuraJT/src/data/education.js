@@ -2,23 +2,21 @@
 export const education = [
   {
     id: 1,
-    institution: "University of Technology",
-    degree: "Bachelor of Science in Computer Science",
-    year: "2020 - 2024",
+    institution: "Sri Lanka Institute of Information Technology (SLIIT)",
+    degree: "Bachelor of Science in Information Technology",
+    year: "2023 - present",
     description: "Specialized in web development and software engineering with a focus on full-stack development and cloud technologies.",
   },
   {
     id: 2,
-    institution: "Online Learning Platform",
-    degree: "Full-Stack Web Development Bootcamp",
-    year: "2023 - 2024",
-    description: "Intensive bootcamp covering React, Node.js, databases, and modern development practices with real-world project experience.",
+    institution: "Rahula Collage, Matara",
+    degree: "Advance level in Engineering Technology",
+    year: "2017-2019",
   },
   {
     id: 3,
-    institution: "Professional Certification",
-    degree: "AWS Solutions Architect Associate",
-    year: "2023",
-    description: "Cloud architecture certification demonstrating expertise in designing scalable and reliable AWS infrastructure solutions.",
+    institution: "Kokawela Central Collage, Matara",
+    degree: "Ordinary level",
+    year: "2006-2016",
   },
 ];
