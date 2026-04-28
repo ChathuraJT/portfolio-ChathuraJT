@@ -115,3 +115,95 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+/* About Section Background */
+.about-background {
+  background-image: url('/about_background_light.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.dark .about-background {
+  background-image: url('/about_background_dark.png');
+}
+
+/* Profile Picture Animation */
+.profile-picture-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  will-change: contents;
+}
+
+.profile-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: profileImageLoop 14s infinite linear;
+  will-change: opacity, transform;
+}
+
+.profile-avatar-gif {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: avatarGifLoop 14s infinite linear;
+  will-change: opacity, transform;
+}
+
+@keyframes profileImageLoop {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  52% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  92% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  94% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes avatarGifLoop {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  52% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  88% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  90% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}

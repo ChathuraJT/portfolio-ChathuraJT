@@ -57,15 +57,20 @@ export default function Hero() {
 
         {/* Right side - Profile Image */}
         <div className="flex items-center justify-center">
-          <div className="w-64 h-64 p-1 transition rounded-full shadow-2xl md:w-80 md:h-80 bg-gradient-to-br from-emerald-500 to-teal-500 dark:from-emerald-600 dark:to-teal-600 hover:shadow-emerald-500/50">
-            <div className="flex items-center justify-center w-full h-full overflow-hidden bg-white dark:bg-gray-900 rounded-full">
+          <div className="w-64 h-64 p-1 rounded-full shadow-2xl md:w-80 md:h-80 bg-gradient-to-br from-emerald-500 to-teal-500 dark:from-emerald-600 dark:to-teal-600 hover:shadow-emerald-500/50">
+            <div className="flex items-center justify-center w-full h-full overflow-hidden bg-white dark:bg-gray-900 rounded-full profile-picture-container">
               <img
                 src="/fbpic.jpeg"
                 alt="Chathura JT"
-                className="object-cover w-full h-full"
+                className="object-cover w-full h-full profile-image"
                 onError={(e) => {
                   e.target.src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop';
                 }}
+              />
+              <img
+                src="/profile-avatar.gif"
+                alt="Chathura Avatar"
+                className="object-cover w-full h-full profile-avatar-gif"
               />
             </div>
           </div>

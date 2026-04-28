@@ -2,7 +2,7 @@
 export const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
+    title: "Study Management System",
     description: "A full-stack e-commerce platform with real-time inventory management and payment integration.",
     technologies: ["React", "Node.js", "MongoDB", "Stripe"],
     githubLink: "https://github.com/yourusername/ecommerce-platform",
@@ -10,7 +10,7 @@ export const projects = [
   },
   {
     id: 2,
-    title: "Task Management App",
+    title: "Smart Campus Operation Hub",
     description: "A collaborative task management tool with real-time updates and team collaboration features.",
     technologies: ["React", "Firebase", "TailwindCSS", "Redux"],
     githubLink: "https://github.com/yourusername/task-manager",
@@ -18,7 +18,23 @@ export const projects = [
   },
   {
     id: 3,
-    title: "AI Chat Assistant",
+    title: "Hotel Management System",
+    description: "An AI-powered chat application built with modern web technologies and machine learning APIs.",
+    technologies: ["React", "Python", "FastAPI", "OpenAI API"],
+    githubLink: "https://github.com/yourusername/ai-chat",
+    liveLink: "https://ai-chat.demo.com",
+  },
+  {
+    id: 4,
+    title: "Drive Fuel Solution",
+    description: "An AI-powered chat application built with modern web technologies and machine learning APIs.",
+    technologies: ["React", "Python", "FastAPI", "OpenAI API"],
+    githubLink: "https://github.com/yourusername/ai-chat",
+    liveLink: "https://ai-chat.demo.com",
+  },
+  {
+    id: 5,
+    title: "Time Tunner(Todo List App)",
     description: "An AI-powered chat application built with modern web technologies and machine learning APIs.",
     technologies: ["React", "Python", "FastAPI", "OpenAI API"],
     githubLink: "https://github.com/yourusername/ai-chat",
