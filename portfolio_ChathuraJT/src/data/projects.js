@@ -3,7 +3,7 @@ export const projects = [
   {
     id: 1,
     title: "Study Management System",
-    description: "A full-stack e-commerce platform with real-time inventory management and payment integration.",
+    description: "This looks like a full-stack study management system with a Node/Express backend (auth, users, sessions, schedules, quizzes, documents, chat, admin) and a Vite/React frontend. There is also a browser extension for app integration or warnings, plus services for AI-assisted features like quiz generation and difficulty tracking.",
     image: "ITPM.png",
     technologies: ["React", "Node.js", "MongoDB", "tailWindCSS","Gemini API"],
     githubLink: "https://github.com/thilina-udara/smart-campus-operation-hub",
