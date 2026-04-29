@@ -10,11 +10,11 @@ import './App.css';
 
 function App() {
   return (
-    <div className="min-h-screen transition-colors duration-300 bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100">
+    <div className="min-h-screen text-gray-900 transition-colors duration-300 bg-gray-50 dark:bg-gray-950 dark:text-gray-100">
       <Navbar />
       <Hero />
       <About />
-      <TechStack />
+      {/* <TechStack /> */}
       <Education />
       <Projects />
       <Contact />

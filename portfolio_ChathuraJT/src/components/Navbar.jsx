@@ -6,8 +6,10 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDark, setIsDark] = useState(() => {
     if (typeof window !== 'undefined') {
-      return localStorage.getItem('theme') === 'dark' || 
-        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      if ('theme' in localStorage) {
+        return localStorage.getItem('theme') === 'dark';
+      }
+      return true;
     }
     return true;
   });
