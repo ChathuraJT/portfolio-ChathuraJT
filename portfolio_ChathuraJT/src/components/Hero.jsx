@@ -87,7 +87,7 @@ export default function Hero() {
 
       <div className="relative z-10 grid items-center max-w-6xl gap-12 px-4 py-12 mx-auto sm:px-6 lg:px-8 md:grid-cols-2">
         {/* Left side - Text content */}
-        <div className="space-y-6 text-left animate-fade-in">
+        <div className="order-2 space-y-6 text-left animate-fade-in md:order-1">
           <h1 className="text-5xl font-bold leading-tight text-gray-900 dark:text-white md:text-6xl">
             Hi, I'm <span className="text-green-600 dark:text-green-400">Chathura Janaka</span>
           </h1>
@@ -133,7 +133,7 @@ export default function Hero() {
         </div>
 
         {/* Right side - Profile Image and Social Icons */}
-        <div className="relative flex items-center justify-center">
+        <div className="relative flex items-center justify-center order-1 md:order-2">
           <div className="w-64 h-64 p-1 rounded-full shadow-2xl md:w-80 md:h-80 bg-gradient-to-br from-gray-700 to-gray-600 dark:from-gray-800 dark:to-gray-700 hover:shadow-gray-700/50">
             <div className="flex items-center justify-center w-full h-full overflow-hidden bg-white rounded-full dark:bg-gray-900 profile-picture-container">
               <img
