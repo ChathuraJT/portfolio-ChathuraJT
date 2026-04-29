@@ -21,7 +21,7 @@ export const projects = [
   {
     id: 3,
     title: "Hotel Management System",
-    description: "An AI-powered chat application built with modern web technologies and machine learning APIs.",
+    description: "VilaTaly is a modern hotel management system designed to streamline room package management, booking, inventory, employee, and feedback management for both administrators and guests",
     image: "villatally2.png",
     technologies: ["React", "Python", "FastAPI", "OpenAI API"],
     githubLink: "https://github.com/yourusername/ai-chat",
@@ -48,7 +48,7 @@ export const projects = [
   {
     id: 6,
     title: "My Portfolio(ChathuraJT)",
-    description: "An AI-powered chat application built with modern web technologies and machine learning APIs.",
+    description: "A clean, modern personal portfolio for Chathura Janaka featuring a hero intro with typing effect, social links, and a profile image, followed by about, education, project highlights, and contact sections—styled with Tailwind and supporting dark mode for a polished, professional presentation.",
     image: "portfolio.png",
     technologies: ["React", "tailWindCSS", "Three.js", "Java Script"],
     githubLink: "portfolio.png",
