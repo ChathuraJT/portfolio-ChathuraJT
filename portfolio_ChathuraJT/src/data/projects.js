@@ -5,17 +5,17 @@ export const projects = [
     title: "Study Management System",
     description: "A full-stack e-commerce platform with real-time inventory management and payment integration.",
     image: "ITPM.png",
-    technologies: ["React", "Node.js", "MongoDB", "tailWindCSS"],
-    githubLink: "https://github.com/yourusername/ecommerce-platform",
+    technologies: ["React", "Node.js", "MongoDB", "tailWindCSS","Gemini API"],
+    githubLink: "https://github.com/thilina-udara/smart-campus-operation-hub",
     liveLink: "https://ecommerce-platform.demo.com",
   },
   {
     id: 2,
     title: "Smart Campus Operation Hub",
-    description: "A collaborative task management tool with real-time updates and team collaboration features.",
+    description: "The Smart Campus Operation Hub is a premium, full-stack enterprise solution designed to modernize university operations. From managing physical resources and lab bookings to handling support tickets and automated notifications, this platform provides a centralized, secure, and intuitive experience for students, staff, and administrators.",
     image: "PAF.png",
     technologies: ["React", "Spring boot", "TailwindCSS", "Mongo DB"],
-    githubLink: "https://github.com/yourusername/task-manager",
+    githubLink: "https://github.com/thilina-udara/study-management-system",
     liveLink: "https://task-manager.demo.com",
   },
   {
@@ -30,7 +30,7 @@ export const projects = [
   {
     id: 4,
     title: "Drive Fuel Solution",
-    description: "An AI-powered chat application built with modern web technologies and machine learning APIs.",
+    description: "This platform is designed to simplify the process of purchasing vehicle parts online and booking fuel services for customers and service stations. Built using Java and MySQL, the application provides a user-friendly interface for users to seamlessly order vehicle parts and schedule fuel bookings, making it easier for service stations to manage and track orders.",
     image: "drive fuel solution.png",
     technologies: ["HTML", "CSS", "MYSQL", "JAVA"],
     githubLink: "https://github.com/ChathuraJT/DriveFuel-Solutions",
@@ -39,7 +39,7 @@ export const projects = [
   {
     id: 5,
     title: "Time Tunner(Todo List App)",
-    description: "An AI-powered chat application built with modern web technologies and machine learning APIs.",
+    description: "Simple task manager application that allow user to add their day to day tasks.",
     image: "timetunner.png",
     technologies: ["XML", "Kotlin",],
     githubLink: "https://github.com/ChathuraJT/Time_Tunner",
@@ -48,7 +48,7 @@ export const projects = [
   {
     id: 6,
     title: "My Portfolio(ChathuraJT)",
-    description: "A clean, modern personal portfolio for Chathura Janaka featuring a hero intro with typing effect, social links, and a profile image, followed by about, education, project highlights, and contact sections—styled with Tailwind and supporting dark mode for a polished, professional presentation.",
+    description: "A Simple, modern personal portfolio for Chathura Janaka featuring a hero intro with typing effect, social links, and a profile image, followed by about, education, project highlights, and contact sections—styled with Tailwind and supporting dark mode for a polished, professional presentation.",
     image: "portfolio.png",
     technologies: ["React", "tailWindCSS", "Three.js", "Java Script"],
     githubLink: "portfolio.png",

@@ -17,9 +17,12 @@ export default function Hero() {
   }, []);
 
   const handleDownloadCV = () => {
-    // TODO: Replace with your actual CV file path
-    console.log('Download CV clicked');
-    // Example: window.open('/path/to/your/cv.pdf', '_blank');
+    const link = document.createElement('a');
+    link.href = '/cv.pdf'; // file in /public
+    link.download = 'Chathura-Janaka-CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const handleContactMe = (e) => {

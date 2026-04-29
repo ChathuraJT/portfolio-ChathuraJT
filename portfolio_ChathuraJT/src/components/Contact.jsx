@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -17,13 +18,26 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    setFormData({ name: '', email: '', message: '' });
-    setTimeout(() => setSubmitted(false), 3000);
+
+    try {
+      await emailjs.send(
+        'service_mamahnm',
+        'template_d8ylcgs',
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+        '86j2hzMQ7SiYwm9Hb'
+      );
+      setSubmitted(true);
+      setFormData({ name: '', email: '', message: '' });
+      setTimeout(() => setSubmitted(false), 3000);
+    } catch (error) {
+      console.error('EmailJS error:', error);
+    }
   };
 
   return (
@@ -203,3 +217,7 @@ export default function Contact() {
     </section>
   );
 }
+
+
+
+// email js =service_mamahnm
