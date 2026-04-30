@@ -197,8 +197,11 @@ export default function Hero() {
       
 
       {/* Scroll indicator */}
-      <div className="absolute text-gray-500 transform -translate-x-1/2 bottom-8 left-1/2 animate-bounce dark:text-gray-400">
-        <BsMouse size={28} />
+      <div className="absolute text-gray-500 transform -translate-x-1/2 bottom-8 left-1/2 animate-bounce dark:text-gray-400 ">
+        {/* <BsMouse size={28} /> */}
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13l-3 3m0 0l-3-3m3 3V8m0 0v8" />
+        </svg>
       </div>
     </section>
   );
