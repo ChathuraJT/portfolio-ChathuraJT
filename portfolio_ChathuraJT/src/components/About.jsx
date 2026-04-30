@@ -70,6 +70,19 @@ export default function About() {
 I'm the kind of developer who opens a browser and sees a canvas. Not a webpage. A canvas. A space where physics, light, shadow, animation, and interaction can collide into something that feels less like software and more like an experience you step into.
 That obsession is what drives everything I build.`;
 
+  const techTags = [
+    'React.js',
+    'Next.js',
+    'Angular',
+    'HTML',
+    'Tailwind CSS',
+    'CSS',
+    'Vanilla.js',
+    'JavaScript',
+    'Node.js',
+    'MongoDB',
+  ];
+
   return (
     <section id="about" className="relative flex-col py-24 overflow-hidden transition-colors duration-300 about-background">
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none" />
@@ -95,29 +108,22 @@ That obsession is what drives everything I build.`;
             </div>
           </div>
 
-          {/* Additional Info */}
-          <div className="grid gap-8 pt-12 mt-16 border-t border-black md:grid-cols-3 dark:border-gray-800">
-            <div className="text-left">
-              <div className="mb-1 text-4xl font-bold text-green-600 dark:text-green-400">
-                15+
-              </div>
-              <p className="text-sm font-medium text-black dark:text-gray-400">Projects Completed</p>
-            </div>
-
-            <div className="text-left">
-              <div className="mb-1 text-4xl font-bold text-green-600 dark:text-green-400">
-                2+
-              </div>
-              <p className="text-sm font-medium text-black dark:text-gray-400">Years Experience</p>
-            </div>
-
-            <div className="text-left">
-              <div className="mb-1 text-4xl font-bold text-green-600 dark:text-green-400">
-                100%
-              </div>
-              <p className="text-sm font-medium text-black dark:text-gray-400">Client Satisfaction</p>
+          <div className="mt-12 text-left">
+            <h3 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
+              Tech Stack
+            </h3>
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+              {techTags.map((tag) => (
+                <span
+                  key={tag}
+                  className="inline-flex items-center px-3 py-2 text-sm font-semibold text-green-600 bg-white border border-gray-200 rounded-full shadow-sm dark:bg-gray-900 dark:text-green-400 dark:border-gray-800"
+                >
+                  {tag}
+                </span>
+              ))}
             </div>
           </div>
+
         </div>
       </div>
     </section>

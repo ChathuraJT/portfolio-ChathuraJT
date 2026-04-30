@@ -105,7 +105,7 @@ export default function Hero() {
           </p>
           
           <p className="max-w-lg text-lg leading-relaxed text-gray-500 dark:text-gray-400">
-            Hi, I'm an undergraduate IT student at the Sri Lanka Institute of Information Technology (SLIIT), But before you picture a student buried under textbooks and assignment deadlines, let me paint you a different picture.
+            Undergraduate IT student at the Sri Lanka Institute of Information Technology (SLIIT), 
           </p>
 
           {/* Buttons */}
@@ -130,7 +130,31 @@ export default function Hero() {
               Contact Me
             </button>
           </div>
+
+          <div className="grid gap-8 pt-10 mt-8 border-t border-gray-200 md:grid-cols-3 dark:border-gray-800">
+            <div className="text-left">
+              <div className="mb-1 text-4xl font-bold text-green-600 dark:text-green-400">
+                15+
+              </div>
+              <p className="text-sm font-medium text-gray-700 dark:text-gray-400">Projects Completed</p>
+            </div>
+
+            <div className="text-left">
+              <div className="mb-1 text-4xl font-bold text-green-600 dark:text-green-400">
+                2+
+              </div>
+              <p className="text-sm font-medium text-gray-700 dark:text-gray-400">Years Experience</p>
+            </div>
+
+            <div className="text-left">
+              <div className="mb-1 text-4xl font-bold text-green-600 dark:text-green-400">
+                100%
+              </div>
+              <p className="text-sm font-medium text-gray-700 dark:text-gray-400">Client Satisfaction</p>
+            </div>
+          </div>
         </div>
+
 
         {/* Right side - Profile Image and Social Icons */}
         <div className="relative flex items-center justify-center order-1 md:order-2">
@@ -169,6 +193,8 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      
 
       {/* Scroll indicator */}
       <div className="absolute text-gray-500 transform -translate-x-1/2 bottom-8 left-1/2 animate-bounce dark:text-gray-400">

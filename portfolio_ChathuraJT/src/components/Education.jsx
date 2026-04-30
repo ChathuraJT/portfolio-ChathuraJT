@@ -31,17 +31,17 @@ export default function Education() {
               </div>
 
               {/* Content Card */}
-              <div className="p-5 transition-shadow bg-white border border-gray-200 shadow-sm dark:bg-gray-900 dark:border-gray-800 rounded-xl md:p-6 hover:shadow-md">
-                <h3 className="mb-1 text-lg font-bold text-gray-900 md:text-xl dark:text-white">
+              <div className="p-4 transition-shadow bg-white border border-gray-200 shadow-sm dark:bg-gray-900 dark:border-gray-800 rounded-xl md:p-5 hover:shadow-md">
+                <h3 className="mb-1 text-base font-bold text-gray-900 md:text-lg dark:text-white">
                   {edu.degree}
                 </h3>
-                <p className="mb-1 text-base text-gray-800 dark:text-gray-200">
+                <p className="mb-1 text-sm text-gray-800 dark:text-gray-200">
                   {edu.institution}
                 </p>
-                <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
+                <p className="mb-2 text-xs text-gray-500 dark:text-gray-400">
                   {edu.year}
                 </p>
-                <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+                <p className="text-xs leading-relaxed text-gray-600 dark:text-gray-400">
                   {edu.description}
                 </p>
               </div>
