@@ -1,28 +1,10 @@
 import { useState, useEffect } from 'react';
+import { FiDownload } from 'react-icons/fi';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isDark, setIsDark] = useState(() => {
-    if (typeof window !== 'undefined') {
-      if ('theme' in localStorage) {
-        return localStorage.getItem('theme') === 'dark';
-      }
-      return true;
-    }
-    return true;
-  });
-
-  useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
-  }, [isDark]);
 
   const navLinks = [
     { name: 'About', href: '#about' },
@@ -34,7 +16,7 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
-      
+
       const sections = navLinks.map(link => link.href.slice(1));
       for (let section of sections) {
         const element = document.getElementById(section);
@@ -61,66 +43,71 @@ export default function Navbar() {
     setIsOpen(false);
   };
 
+  const handleDownloadCV = () => {
+    const link = document.createElement('a');
+    link.href = '/cv.pdf';
+    link.download = 'Chathura-Janaka-CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
-    <nav 
+    <nav
       className={`fixed z-50 transition-all duration-300 ${
-        isScrolled 
-          ? `top-4 left-4 right-4 lg:left-1/2 lg:right-auto lg:-translate-x-1/2 lg:w-[calc(100%-2rem)] lg:max-w-6xl bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border border-gray-200 dark:border-gray-800 ${isOpen ? 'rounded-2xl' : 'rounded-full'}` 
-          : 'top-0 left-0 right-0 w-full bg-white/90 dark:bg-gray-950/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800'
+        isScrolled
+          ? `top-4 left-4 right-4 lg:left-1/2 lg:right-auto lg:-translate-x-1/2 lg:w-[calc(100%-2rem)] lg:max-w-6xl bg-white/95 backdrop-blur-md border border-gray-200 ${isOpen ? 'rounded-2xl' : 'rounded-full'}`
+          : 'top-0 left-0 right-0 w-full bg-transparent border-b border-transparent pt-4 pb-2'
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
+
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <a href="#" className="text-xl font-bold text-green-600 dark:text-green-400 hover:text-gray-700 dark:hover:text-green-300 transition">
+          <div className="flex items-center gap-3">
+            <div className="relative w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center overflow-hidden shadow-sm">
+              <div className="absolute top-0 left-0 w-1/2 h-full bg-[#10b981]"></div>
+              <span className="relative z-10 text-white font-bold text-xl leading-none">C</span>
+            </div>
+            <a href="#" className="font-bold text-xl tracking-tight text-gray-900">
               Chathura JT
             </a>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Desktop Nav Links */}
+          <div className="hidden md:flex items-center space-x-10">
             {navLinks.map(link => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link.href)}
-                className={`text-sm font-medium transition ${
+                className={`text-[13px] font-semibold transition-colors ${
                   activeSection === link.href.slice(1)
-                    ? 'text-green-600 dark:text-green-400 border-b-2 border-gray-800 dark:border-gray-300'
-                    : 'text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-300'
+                    ? 'text-black border-b-2 border-black'
+                    : 'text-gray-700 hover:text-black'
                 }`}
               >
                 {link.name}
               </a>
             ))}
+          </div>
+
+          {/* Download CV Button */}
+          <div className="hidden md:flex items-center">
             <button
-              onClick={() => setIsDark(!isDark)}
-              className="p-2 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-300 transition rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+              onClick={handleDownloadCV}
+              className="flex items-center gap-2 bg-gray-900 text-white px-6 py-2.5 rounded-full text-[13px] font-semibold transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
             >
-              {isDark ? (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
-              ) : (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
-              )}
+              Download CV
+              <FiDownload className="w-4 h-4" />
             </button>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center gap-4">
-            <button
-              onClick={() => setIsDark(!isDark)}
-              className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-300 transition"
-            >
-              {isDark ? (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
-              ) : (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
-              )}
-            </button>
+          {/* Mobile hamburger */}
+          <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-300 transition"
+              className="text-gray-600 hover:text-gray-900 transition"
             >
               {isOpen ? (
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -135,7 +122,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden pb-4">
             {navLinks.map(link => (
@@ -143,15 +130,22 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link.href)}
-                className={`block px-3 py-2 text-sm font-medium transition ${
+                className={`block px-3 py-2 text-sm font-semibold transition ${
                   activeSection === link.href.slice(1)
-                    ? 'text-green-600 dark:text-green-400 bg-gray-100 dark:bg-gray-900'
-                    : 'text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-gray-300'
+                    ? 'text-gray-900 bg-gray-100'
+                    : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
                 {link.name}
               </a>
             ))}
+            <button
+              onClick={handleDownloadCV}
+              className="mt-4 flex w-full items-center justify-center gap-2 bg-gray-900 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-transform hover:scale-105"
+            >
+              Download CV
+              <FiDownload className="w-4 h-4" />
+            </button>
           </div>
         )}
       </div>
