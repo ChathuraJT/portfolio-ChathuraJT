@@ -1,129 +1,91 @@
 import { useEffect, useRef } from 'react';
-import * as THREE from 'three';
+
+// Reusable background shared across all sections
+export function SectionBackground({ blobVariant = 'default' }) {
+  const blobs = {
+    default: (
+      <>
+        <div className="absolute pointer-events-none z-0" style={{ top: '-80px', left: '-60px', width: '380px', height: '380px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,182,193,0.45) 0%, transparent 70%)', filter: 'blur(60px)' }} />
+        <div className="absolute pointer-events-none z-0" style={{ bottom: '0px', right: '-60px', width: '380px', height: '380px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(216,180,254,0.4) 0%, transparent 70%)', filter: 'blur(60px)' }} />
+      </>
+    ),
+    alt: (
+      <>
+        <div className="absolute pointer-events-none z-0" style={{ top: '-60px', right: '5%', width: '360px', height: '360px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(173,216,230,0.45) 0%, transparent 70%)', filter: 'blur(60px)' }} />
+        <div className="absolute pointer-events-none z-0" style={{ bottom: '0px', left: '-40px', width: '360px', height: '360px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,182,193,0.4) 0%, transparent 70%)', filter: 'blur(60px)' }} />
+      </>
+    ),
+  };
+
+  return (
+    <>
+      {blobs[blobVariant] || blobs.default}
+      {/* Dot grid */}
+      <div className="absolute inset-0 pointer-events-none z-0" style={{ backgroundImage: 'radial-gradient(circle, #b0b0b0 1px, transparent 1px)', backgroundSize: '24px 24px', opacity: 0.3 }} />
+      {/* Grain texture */}
+      <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-[0.04] mix-blend-multiply z-0" aria-hidden="true">
+        <filter id={`noise-${blobVariant}`}>
+          <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" stitchTiles="stitch" />
+        </filter>
+        <rect width="100%" height="100%" filter={`url(#noise-${blobVariant})`} />
+      </svg>
+      {/* Dashed ring top-left */}
+      <svg className="absolute -top-40 -left-40 w-[500px] h-[500px] text-gray-400 pointer-events-none opacity-20 z-0" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+        <circle cx="50" cy="50" r="48" stroke="currentColor" strokeWidth="0.4" strokeDasharray="2 3" />
+      </svg>
+      {/* Dashed ring bottom-right */}
+      <svg className="absolute -bottom-40 -right-40 w-[500px] h-[500px] text-gray-400 pointer-events-none opacity-20 z-0" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+        <circle cx="50" cy="50" r="48" stroke="currentColor" strokeWidth="0.4" strokeDasharray="2 3" />
+      </svg>
+    </>
+  );
+}
 
 export default function About() {
-  const canvasRef = useRef(null);
-
-  useEffect(() => {
-    if (!canvasRef.current) return;
-
-    const canvas = canvasRef.current;
-    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(60, 1, 0.1, 1000);
-    camera.position.z = 60;
-
-    const starCount = 500;
-    const positions = new Float32Array(starCount * 3);
-    for (let i = 0; i < starCount; i += 1) {
-      const i3 = i * 3;
-      positions[i3] = (Math.random() - 0.5) * 160;
-      positions[i3 + 1] = (Math.random() - 0.5) * 120;
-      positions[i3 + 2] = (Math.random() - 0.5) * 160;
-    }
-
-    const geometry = new THREE.BufferGeometry();
-    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-
-    const material = new THREE.PointsMaterial({
-      color: '#16a34a',
-      size: 0.6,
-      transparent: true,
-      opacity: 0.6,
-      sizeAttenuation: true,
-    });
-
-    const stars = new THREE.Points(geometry, material);
-    scene.add(stars);
-
-    const resize = () => {
-      const { clientWidth, clientHeight } = canvas.parentElement || canvas;
-      renderer.setSize(clientWidth, clientHeight, false);
-      camera.aspect = clientWidth / clientHeight;
-      camera.updateProjectionMatrix();
-    };
-
-    resize();
-    window.addEventListener('resize', resize);
-
-    let animationId;
-    const animate = () => {
-      stars.rotation.y += 0.0008;
-      stars.rotation.x += 0.0003;
-      renderer.render(scene, camera);
-      animationId = requestAnimationFrame(animate);
-    };
-    animate();
-
-    return () => {
-      cancelAnimationFrame(animationId);
-      window.removeEventListener('resize', resize);
-      geometry.dispose();
-      material.dispose();
-      renderer.dispose();
-    };
-  }, []);
-  // Bio
   const bio = `Hi, I'm an undergraduate IT student at the Sri Lanka Institute of Information Technology (SLIIT), But before you picture a student buried under textbooks and assignment deadlines, let me paint you a different picture.
 I'm the kind of developer who opens a browser and sees a canvas. Not a webpage. A canvas. A space where physics, light, shadow, animation, and interaction can collide into something that feels less like software and more like an experience you step into.
 That obsession is what drives everything I build.`;
 
   const techTags = [
-    'React.js',
-    'Next.js',
-    'Angular',
-    'HTML',
-    'Tailwind CSS',
-    'CSS',
-    'Vanilla.js',
-    'JavaScript',
-    'Node.js',
-    'MongoDB',
+    'React.js', 'Next.js', 'Angular', 'HTML', 'Tailwind CSS',
+    'CSS', 'Vanilla.js', 'JavaScript', 'Node.js', 'MongoDB',
   ];
 
   return (
-    <section id="about" className="relative flex-col py-24 overflow-hidden transition-colors duration-300 about-background">
-      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none" />
-      {/* Background Overlay */}
-      <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-white via-white/60 to-transparent dark:from-black dark:via-black/70 dark:to-transparent"></div>
+    <section id="about" className="relative py-24 overflow-hidden bg-[#f5f5f5]">
+      <SectionBackground blobVariant="alt" />
 
       <div className="relative z-10 max-w-6xl px-4 mx-auto sm:px-6 lg:px-8">
-        <div className="max-w-4xl">
+        <div className="max-w-4xl mx-auto text-center">
           {/* Section Header */}
-          <div className="mb-12 text-left">
-            <h2 className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl dark:text-white">
-              About <span className="text-green-600 dark:text-green-400">Me</span>
+          <div className="mb-12 text-center">
+            <h2 className="mb-3 text-4xl font-bold text-gray-900 md:text-5xl">
+              About <span className="text-[#10b981]">Me</span>
             </h2>
-            <div className="w-16 h-1 bg-gradient-to-r from-gray-800 to-gray-700"></div>
+            <div className="w-16 h-1 bg-[#10b981] rounded-full mx-auto"></div>
           </div>
 
-          <div className="grid gap-12 lg:grid-cols-1">
-            {/* Bio Text */}
-            <div>
-              <p className="text-lg leading-relaxed text-left text-black whitespace-pre-line dark:text-gray-300">
-                {bio}
-              </p>
-            </div>
+          {/* Bio */}
+          <div>
+            <p className="text-center leading-relaxed text-gray-700 whitespace-pre-line">
+              {bio}
+            </p>
           </div>
 
-          <div className="mt-12 text-left">
-            <h3 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
-              Tech Stack
-            </h3>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+          {/* Tech Tags */}
+          <div className="mt-12 text-center">
+            <h3 className="mb-4 text-2xl font-bold text-gray-900">Tech Stack</h3>
+            <div className="flex flex-wrap justify-center gap-3">
               {techTags.map((tag) => (
                 <span
                   key={tag}
-                  className="inline-flex items-center px-3 py-2 text-sm font-semibold text-green-600 bg-white border border-gray-200 rounded-full shadow-sm dark:bg-gray-900 dark:text-green-400 dark:border-gray-800"
+                  className="inline-flex items-center px-4 py-2 text-sm font-semibold text-[#10b981] bg-white border border-gray-200 rounded-full shadow-sm hover:shadow-md hover:border-[#10b981]/40 transition-all"
                 >
                   {tag}
                 </span>
               ))}
             </div>
           </div>
-
         </div>
       </div>
     </section>
