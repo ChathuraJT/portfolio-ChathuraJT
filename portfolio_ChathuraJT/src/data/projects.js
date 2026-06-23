@@ -46,6 +46,15 @@ export const projects = [
     liveLink: "https://ai-chat.demo.com",
   },
   {
+    id: 5,
+    title: "E-Commerce Platform",
+    description: "A simple e-commerce platform for buying and selling products online.The backend is built with the Django framework, which provides secure user authentication, database management, and admin control. The frontend uses HTML (often combined with CSS and JavaScript) to create a responsive and user-friendly interface.",
+    image: "ecommerce.png",
+    technologies: ["Django", "Python", "HTML", "CSS"],
+    githubLink: "https://github.com/ChathuraJT/Django_Shopping",
+    liveLink: "https://ai-chat.demo.com",
+  },
+  {
     id: 6,
     title: "My Portfolio(ChathuraJT)",
     description: "A Simple, modern personal portfolio for Chathura Janaka featuring a hero intro with typing effect, social links, and a profile image, followed by about, education, project highlights, and contact sections—styled with Tailwind and supporting dark mode for a polished, professional presentation.",
