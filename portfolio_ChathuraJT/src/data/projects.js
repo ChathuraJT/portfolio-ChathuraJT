@@ -2,6 +2,7 @@
 export const projects = [
   {
     id: 1,
+    category: "Full-Stack Development",
     title: "Study Management System",
     description: "This looks like a full-stack study management system with a Node/Express backend (auth, users, sessions, schedules, quizzes, documents, chat, admin) and a Vite/React frontend. There is also a browser extension for app integration or warnings, plus services for AI-assisted features like quiz generation and difficulty tracking.",
     image: "ITPM.png",
@@ -11,6 +12,7 @@ export const projects = [
   },
   {
     id: 2,
+    category: "Full-Stack Development",
     title: "Smart Campus Operation Hub",
     description: "The Smart Campus Operation Hub is a premium, full-stack enterprise solution designed to modernize university operations. From managing physical resources and lab bookings to handling support tickets and automated notifications, this platform provides a centralized, secure, and intuitive experience for students, staff, and administrators.",
     image: "PAF.png",
@@ -20,6 +22,7 @@ export const projects = [
   },
   {
     id: 3,
+    category: "Full-Stack Development",
     title: "Hotel Management System",
     description: "VilaTaly is a modern hotel management system designed to streamline room package management, booking, inventory, employee, and feedback management for both administrators and guests.I developed User Management (registration, login, profile, password, account deletion) and Feedback Management (submit, edit, delete, rate) modules with secure, user-friendly interfaces and validation.",
     image: "villatally2.png",
@@ -29,6 +32,7 @@ export const projects = [
   },
   {
     id: 4,
+    category: "Full-Stack Development",
     title: "Drive Fuel Solution",
     description: "This platform is designed to simplify the process of purchasing vehicle parts online and booking fuel services for customers and service stations. Built using Java and MySQL, the application provides a user-friendly interface for users to seamlessly order vehicle parts and schedule fuel bookings, making it easier for service stations to manage and track orders.",
     image: "drive fuel solution.png",
@@ -38,6 +42,7 @@ export const projects = [
   },
   {
     id: 5,
+    category: "Mobile Development",
     title: "Time Tunner(Todo List App)",
     description: "Simple task manager application that allow user to add their day to day tasks.",
     image: "timetunner.png",
@@ -46,7 +51,8 @@ export const projects = [
     liveLink: "https://ai-chat.demo.com",
   },
   {
-    id: 5,
+    id: 6,
+    category: "Full-Stack Development",
     title: "E-Commerce Platform",
     description: "A simple e-commerce platform for buying and selling products online.The backend is built with the Django framework, which provides secure user authentication, database management, and admin control. The frontend uses HTML (often combined with CSS and JavaScript) to create a responsive and user-friendly interface.",
     image: "ecommerce.png",
@@ -55,7 +61,8 @@ export const projects = [
     liveLink: "https://ai-chat.demo.com",
   },
   {
-    id: 6,
+    id: 7,
+    category: "Web Development",
     title: "My Portfolio(ChathuraJT)",
     description: "A Simple, modern personal portfolio for Chathura Janaka featuring a hero intro with typing effect, social links, and a profile image, followed by about, education, project highlights, and contact sections—styled with Tailwind and supporting dark mode for a polished, professional presentation.",
     image: "portfolio.png",

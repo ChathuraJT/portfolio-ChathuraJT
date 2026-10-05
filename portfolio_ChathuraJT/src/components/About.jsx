@@ -1,4 +1,3 @@
-import { useEffect, useRef } from 'react';
 
 // Reusable background shared across all sections
 export function SectionBackground({ blobVariant = 'default' }) {
